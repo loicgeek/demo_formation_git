@@ -30,6 +30,7 @@ class _StatusesListState extends State<StatusesList> {
                     ),
                   ),
                   title: Text("Hilare status"),
+                  subtitle: Text("${DateTime.now()}"),
                 ),
                 Divider(
                   height: 1,
