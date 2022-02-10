@@ -15,7 +15,28 @@ class _StatusesListState extends State<StatusesList> {
         onPressed: () {},
         child: const Icon(Icons.send),
       ),
-      body: Container(),
+      body: ListView.builder(
+          itemCount: 15,
+          itemBuilder: (context, index) {
+            return Column(
+              children: [
+                ListTile(
+                  leading: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                  title: Text("Hilare status"),
+                ),
+                Divider(
+                  height: 1,
+                )
+              ],
+            );
+          }),
     );
   }
 }
