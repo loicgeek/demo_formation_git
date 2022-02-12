@@ -12,11 +12,24 @@ class ConversationTile extends StatelessWidget {
     this.unreadMessageCount = 0,
   }) : super(key: key);
 
+  MaterialPageRoute _buildRoute(Widget child) {
+    return MaterialPageRoute(
+      builder: (context) => child,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).pushNamed('/conversation-details');
+        // Navigator.of(context).pushNamed(
+        //   '/conversation-details',
+        //   arguments: {
+        //     "sender": sender,
+        //   },
+        // );
+        Navigator.of(context)
+            .push(_buildRoute(ConversationDetails(sender: sender)));
       },
       child: Container(
         padding: EdgeInsets.all(5),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/src/calculator.dart';
 import 'package:whatsapp_clone/src/calls_list.dart';
 import 'package:whatsapp_clone/src/conversations_list.dart';
 import 'package:whatsapp_clone/src/statuses_list.dart';
@@ -72,18 +73,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ),
                 Tab(
                   text: "Appels",
-                )
+                ),
               ],
             ),
             preferredSize: Size.fromHeight(50)),
       ),
       body: TabBarView(
         controller: _tabController,
-        children: const [
-          ConversationsList(),
-          StatusesList(),
-          CallsList(),
-        ],
+        children: const [ConversationsList(), StatusesList(), CallsList()],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
