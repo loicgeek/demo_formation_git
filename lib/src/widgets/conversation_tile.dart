@@ -41,7 +41,11 @@ class ConversationTile extends StatelessWidget {
               width: 50,
               decoration: BoxDecoration(
                 color: Colors.red,
-                shape: BoxShape.circle,
+                //   shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: AssetImage("assets/images/garoua_zoo.jpeg"),
+                ),
               ),
             ),
             Expanded(
