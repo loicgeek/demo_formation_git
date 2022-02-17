@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     print("initState");
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
     _tabController!.addListener(_tabListener);
     super.initState();
   }
@@ -66,6 +66,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               controller: _tabController,
               tabs: const [
                 Tab(
+                  text: "Calculator",
+                ),
+                Tab(
                   text: "Conversations",
                 ),
                 Tab(
@@ -80,15 +83,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
       body: TabBarView(
         controller: _tabController,
-        children: const [ConversationsList(), StatusesList(), CallsList()],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          counter++;
-          setState(() {});
-          print(counter);
-        },
-        child: Icon(Icons.add),
+        children: const [
+          Calculator(),
+          ConversationsList(),
+          StatusesList(),
+          CallsList(),
+        ],
       ),
     );
   }
