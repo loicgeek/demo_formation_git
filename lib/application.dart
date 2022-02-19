@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/src/404.dart';
+import 'package:whatsapp_clone/src/sliver_app_bar.dart';
 
 import 'src/conversation_details.dart';
 import 'src/home_page.dart';
@@ -17,8 +18,8 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "/home",
-      home: HomePage(),
+      //initialRoute: "/home",
+      home: SliverAppBarPage(),
       routes: {
         "/home": (context) => const HomePage(),
       },
